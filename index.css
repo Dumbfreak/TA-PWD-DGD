@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/trade-gothic-lt-std");
+
+:root {
+  /* Color */
+
+  /* Sizing */
+
+  /* Position */
+  --KananKiri: 0 3rem;
+
+  /* font */
+  --robotoCondensed: "Roboto Condensed", sans-serif;
+  --gothicA1: "Trade Gothic LT Std", sans-serif;
+
+  /* font weight */
+  --extraThin: 100;
+  --thin: 200;
+  --regular: 400;
+  --semiBold: 500;
+  --bold: 600;
+  --extraBold: 900;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+  /* background-color: cadetblue; */
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.headerContainer {
+  padding: 0 6rem;
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoContainer > a > img {
+  max-width: 2rem;
+}
+
+.mainMenu:hover {
+  color: #e30017;
+}
+
+.dropDownMenu ul,
+.dropDownMenu li {
+  margin: 0;
+  padding: 0;
+}
+
+.dropDownMenu ul {
+  background-color: white;
+  list-style: none;
+  width: 100%;
+}
+
+.dropDownMenu li {
+  float: left;
+  position: relative;
+  width: auto;
+}
+
+.dropDownMenu a {
+  color: white;
+  display: block;
+  padding: 20px 2rem;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+#mainMenu:hover {
+  color: #e30017;
+}
+
+#subMenu a {
+  color: black;
+}
+
+#subMenu > li > a:hover {
+  color: #e30017;
+}
+
+#subMenu {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  top: 35px;
+  visibility: hidden;
+  z-index: 1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+li:hover ul#subMenu {
+  opacity: 1;
+  top: 3.85rem;
+  visibility: visible;
+}
+
+#subMenu li {
+  float: none;
+  width: 100%;
+}
+
+.headerContainer a {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: var(--regular);
+  font-family: var(--robotoCondensed);
+}
+
+.headerIcon {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.headerIcon img {
+  max-width: 1.2rem;
+}
+
+/* Product Slides */
+
+/* Product Series List */
+
+.productSeries {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0 0 0;
+  padding: 0;
+}
+
+.productSeries h1 {
+  font-family: var(--robotoCondensed);
+  font-weight: var(--bold);
+  font-size: 46px;
+  cursor: text;
+}
+
+.productSeries div {
+  display: flex;
+  justify-content: center;
+}
+
+.productSeries__productList {
+  margin: 1.5rem 0 0 0;
+}
+
+.productSeries__productList a {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  user-select: none;
+}
+
+.productSeries__productList p {
+  color: #e30017;
+  font-size: 14px;
+  font-family: var(--gothicA1);
+  font-weight: var(--semiBold);
+  text-transform: uppercase;
+  position: relative;
+}
+
+.productSeries__productList__container p::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  height: 1.5px;
+  width: 0;
+  background: #e30017;
+  border-radius: 50px;
+  transition: width 0.3s ease;
+}
+
+.productSeries__productList__container p:hover::before {
+  width: 100%;
+}
+
+.productSeries__productList img {
+  max-width: 8px;
+  margin: 0 0 0 4px;
+  transition: 0.4s;
+}
+
+.productSeries__productList__container:hover > #productSeries__icon {
+  margin-left: 10px;
+}
+
+.productSeries__productList__container:hover > p {
+  color: #c20013;
+}
+
+/* Laptop Series */
+.laptop__series {
+  margin: 2rem 0;
+  display: flex;
+  gap: 2rem;
+  user-select: none;
+  z-index: 0;
+}
+
+.laptop__series > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 30%;
+  overflow: hidden;
+}
+
+.laptop__series > a:hover > img {
+  transform: scale(1.1);
+}
+
+.laptop__series p {
+  color: white;
+  font-family: var(--gothicA1);
+  font-weight: var(--bold);
+  font-size: 1.75rem;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 25%;
+}
+
+.laptop__series > a > img {
+  transition: 0.3s;
+}
+
+/* footer */
+.footer {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer > div {
+  padding: 2rem 5rem;
+  background-color: black;
+}
+
+.footerPathContainer > a > img {
+  min-width: 2rem;
+  min-height: 2rem;
+}
+
+/* Home Button */
+#homeBtn {
+  position: fixed;
+  left: 95%;
+  z-index: 10;
+  bottom: 5%;
+  /* width: 2.5%;
+  height: 5%; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 8px;
+  border-radius: 1rem;
+  transition: 0.8s;
+}
+
+#homeBtn img {
+  max-width: 2.5rem;
+  transition: 0.8s;
+}
