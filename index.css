@@ -32,9 +32,29 @@ html {
   text-decoration: none;
 }
 
+::-webkit-scrollbar {
+  width: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #e7e7e7;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #999;
+}
+
 body {
   overflow-x: hidden;
   /* background-color: cadetblue; */
+}
+
+h1 {
+  color: black;
+  font-size: 3rem;
+  font-family: var(--robotoCondensed);
+  font-weight: var(--regular);
+  text-align: center;
 }
 
 /* Header */
@@ -52,6 +72,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.headerIcon img {
+  transition: 1s;
 }
 
 .logoContainer > a > img {
@@ -80,13 +104,23 @@ body {
   width: auto;
 }
 
-.dropDownMenu a {
+.dropDownMenu a,
+#mainMenu {
   color: white;
   display: block;
   padding: 20px 2rem;
   text-decoration: none;
   text-align: center;
   transition: all 0.25s ease;
+}
+
+#mainMenu {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: var(--regular);
+  font-family: var(--robotoCondensed);
+  user-select: none;
+  cursor: pointer;
 }
 
 #mainMenu:hover {
@@ -138,6 +172,16 @@ li:hover ul#subMenu {
   max-width: 1.2rem;
 }
 
+.header > div:nth-child(2) {
+  background-color: #e30017;
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: var(--regular);
+  font-family: var(--robotoCondensed);
+  color: white;
+  text-transform: uppercase;
+}
+
 /* Product Slides */
 
 /* Product Series List */
@@ -148,13 +192,6 @@ li:hover ul#subMenu {
   flex-direction: column;
   margin: 2rem 0 0 0;
   padding: 0;
-}
-
-.productSeries h1 {
-  font-family: var(--robotoCondensed);
-  font-weight: var(--bold);
-  font-size: 46px;
-  cursor: text;
 }
 
 .productSeries div {
@@ -209,6 +246,84 @@ li:hover ul#subMenu {
 
 .productSeries__productList__container:hover > p {
   color: #c20013;
+}
+
+/* Hot Product */
+.hotProduct {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* spotlight */
+.spotlight {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.spotlightContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 3rem;
+}
+
+.spotlightContainer > div:nth-child(1) > img {
+  transition: 0.3s;
+}
+
+.spotlight div:nth-child(1) {
+  background-color: black;
+  overflow: hidden;
+}
+
+.spotlightContainer:hover > div:nth-child(1) > img {
+  transform: scale(1.12);
+}
+
+.spotlightContainer > div:nth-child(2) > p:nth-child(1) {
+  font-size: 1.5rem;
+  font-family: var(--robotoCondensed);
+  font-weight: var(--bold);
+}
+
+.spotlightContainer p:nth-child(2) {
+  font-size: 1rem;
+  font-family: var(--robotoCondensed);
+}
+
+.spotlightContainer div:nth-child(2) {
+  padding: 3rem 11rem;
+  background-color: rgba(0, 0, 0, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  color: white;
+}
+
+.spotlight__learnMore {
+  display: flex;
+  flex-direction: row;
+  font-family: var(--robotoCondensed);
+  /* font-size: 1.1rem; */
+  gap: 0.5rem;
+  transition: 0.3s;
+}
+
+.spotlight__learnMore > p {
+  font-weight: var(--regular);
+}
+
+.spotlight__learnMore img {
+  max-width: 0.6rem;
+  transition: 0.3s;
+}
+
+.spotlightContainer:hover .spotlight__learnMore__icon {
+  margin-left: 4px;
 }
 
 /* Laptop Series */
@@ -269,9 +384,7 @@ li:hover ul#subMenu {
   position: fixed;
   left: 95%;
   z-index: 10;
-  bottom: 5%;
-  /* width: 2.5%;
-  height: 5%; */
+  bottom: 2.5%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
@@ -279,10 +392,10 @@ li:hover ul#subMenu {
   background-color: white;
   padding: 8px;
   border-radius: 1rem;
-  transition: 0.8s;
+  transition: 1s;
 }
 
 #homeBtn img {
   max-width: 2.5rem;
-  transition: 0.8s;
+  transition: 0.6s;
 }
